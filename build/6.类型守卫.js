@@ -9,12 +9,18 @@ function doSome(x) {
     }
 }
 // 2 instanceof
-class Foo {
-    foo = "i am foo";
-}
-class Bar {
-    bar = "i am bar";
-}
+var Foo = /** @class */ (function () {
+    function Foo() {
+        this.foo = "i am foo";
+    }
+    return Foo;
+}());
+var Bar = /** @class */ (function () {
+    function Bar() {
+        this.bar = "i am bar";
+    }
+    return Bar;
+}());
 function doStuff(arg) {
     if (arg instanceof Foo) {
         arg.foo;

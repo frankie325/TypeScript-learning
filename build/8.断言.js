@@ -26,7 +26,7 @@ function getLength(something) {
 }
 // 2.非空断言
 // 当使用联合类型，无法断定类型时，在变量后添加!可以断言操作变量是非null和非undefined类型
-let uns;
+var uns;
 // uns.toString(); //error
 uns.length;
 // 3.确定赋值断言
@@ -37,7 +37,7 @@ uns.length;
 //     x = 10;
 // }
 // 可以在变量后添加!，TypeScript 编译器就会知道该属性会被明确地赋值
-let x;
+var x;
 initialize();
 console.log(2 * x); // Ok
 function initialize() {

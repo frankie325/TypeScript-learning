@@ -38,10 +38,52 @@ let readArr: ReadonlyArray<number> = [1, 2, 3];
 interface Person3 {
     name: string;
     age?: number;
-    [propName: string]: any; //使用 索引签名 的形式
-    // [propName: string]: string;
+    [propName: number]: any; //使用 索引签名 的形式
+    // [propName: string]: string; //error  一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集
+    // 索引签名的key只支持字符串、数字、symbol类型
 }
 let jack = {
     name: "Jack",
     sex: "boy",
 };
+
+//接口与类型别名的区别
+
+// 都可以用来描述对象的形状或者函数的类型，但语法不同
+interface Person4 {
+    name: number;
+}
+
+type Person5 = {
+    name: number;
+};
+
+interface Person6 {
+    (name: string): void;
+}
+type Person7 = (name: string) => void;
+
+// 类型别名还可以用于其他类型。如基本类型，联合类型等，但接口不是
+type uni = string | number | null;
+type tup = [number, string];
+
+// 接口可以定义多次，会被自动合并为单个接口
+interface Point1 {
+    x: number;
+}
+
+interface Point1 {
+    y: number;
+}
+
+let point1 = { x: 1, y: 1 };
+
+// function prop(obj: object, key: string) {
+//     return obj[key];
+//   }
+
+// 4.任意属性，也就是索引签名可以定义数组的类型
+interface ArrObj {
+    [index: number]: string;
+}
+let arr: ArrObj = ["1", "2"];

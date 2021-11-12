@@ -18,14 +18,14 @@ buildName("Tom", "Cat");
 //     (a: number): number;
 // };
 // 再根据声明去实现这个函数，此时函数的参数和返回值可以不需要写类型声明了
-let fun1 = (name) => {
+var fun1 = function (name) {
     // name.toFixed(1); //error
     return "my" + name;
 };
 // 5.函数重载
 // 函数重载就是同一个函数，根据传递的参数不同，会有不同的表现形式
 //比如下面的 getMyData方法
-let obj = {
+var obj = {
     num: 1,
     str: "1",
 };

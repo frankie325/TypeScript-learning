@@ -11,7 +11,7 @@ let isString: string = "i am string";
 let isSb: symbol = Symbol("i am symbol");
 
 // 5.BigInt类型，ES2020才有，tsconfig文件中target需要进行设置
-let isBI: bigint = 100n;
+// let isBI: bigint = 100n;
 
 // 6.null和undefined类型
 // 严格模式下是不允许将null和undefined赋值给其他类型变量，
