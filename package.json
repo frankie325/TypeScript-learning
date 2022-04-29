@@ -1,0 +1,25 @@
+{
+  "name": "typescript-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfg1234/TypeScript-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kfg1234/TypeScript-learning/issues"
+  },
+  "homepage": "https://github.com/kfg1234/TypeScript-learning#readme",
+  "dependencies": {
+    "loadsh": "^0.0.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182"
+  }
+}
