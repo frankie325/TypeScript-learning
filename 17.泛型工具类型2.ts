@@ -86,7 +86,7 @@ type Record<K extends keyof any> = {
 }
 keyof any为 string | number | symbol，刚好就是对象的索引的类型
 意思就是传入的K被约束为只能是这几种类型
-也就是K只能是
+也就是K只能是这三种类型或者这三种类型的联合类型
 */
 interface PageInfo {
     title: string;
@@ -114,7 +114,7 @@ let foo: ReturnType<Funct> = "1"; //ReturnType得到的类型为string
 
 // 7.Exclude
 /*
-Exclude<T, U> 的作用是将 U 中的类型属于 T 中的类型移除掉。
+Exclude<T, U> 的作用是将 T 和 U 相同的类型从 T 中移除掉。
 定义：
 type Exclude<T, U> = T extends U ? never : T
 */
@@ -133,7 +133,7 @@ let e1: E1 = "a";
 
 // 8.Extract
 /*
-Extract<T, U> 的作用是从 T 中提取出 U。
+Extract<T, U> 的作用是从 T 中提取出和 U 相同的类型。
 定义：
 type Extract<T, U> = T extends U ? T : never;
 */

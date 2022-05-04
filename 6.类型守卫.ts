@@ -74,12 +74,14 @@ function doS(arg: Foo1 | Bar1) {
 
 // 5.自定义类型守卫
 // 通过{形参} is {类型}的语法结构，给函数赋予类型守卫的能力
+
 function isStr(s: any): s is string {
     return typeof s === "string";
 }
 
 function toUpperCase(arg: string | number) {
     if (isStr(arg)) {
+        // 当isStr返回true的时候，说明ts知道arg肯定就是string类型了，就不会报错了
         arg.toUpperCase();
     } else {
         arg.toString().toUpperCase();

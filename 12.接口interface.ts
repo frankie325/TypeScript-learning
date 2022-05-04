@@ -38,8 +38,8 @@ let readArr: ReadonlyArray<number> = [1, 2, 3];
 interface Person3 {
     name: string;
     age?: number;
-    [propName: number]: any; //使用 索引签名 的形式
-    // [propName: string]: string; //error  一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集
+    // [propName: number]: any; //使用 索引签名 的形式
+    // [propName: string]: string; //error  一旦定义了任意属性，那么确定属性和可选属性的值类型都必须是它的类型的子集
     // 索引签名的key只支持字符串、数字、symbol类型
 }
 let jack = {

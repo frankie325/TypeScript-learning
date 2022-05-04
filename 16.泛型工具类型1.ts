@@ -63,6 +63,12 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 
 loggingIdentity<Lengthwise>({ length: 1 });
 
+// 受到了Lengthwise的约束，则相同的属性必须是相同的类型或者子类型
+// interface Another extends Lengthwise {
+//     length: number; // 可以诶number或者 1 | 2 数字字面量类型
+//     age: string; //可以新增属性
+// }
+
 // 5.infer
 // infer是推断的意思，其实就相当于是一个占位的符号，用infer R去给他占位
 type Params<T> = T extends (...args: infer R) => any ? R : any;
