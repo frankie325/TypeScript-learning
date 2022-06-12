@@ -61,6 +61,7 @@ function isStr(s) {
 }
 function toUpperCase(arg) {
     if (isStr(arg)) {
+        // 当isStr返回true的时候，说明ts知道arg肯定就是string类型了，就不会报错了
         arg.toUpperCase();
     }
     else {

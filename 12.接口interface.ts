@@ -40,6 +40,7 @@ interface Person3 {
     age?: number;
     // [propName: number]: any; //使用 索引签名 的形式
     // [propName: string]: string; //error  一旦定义了任意属性，那么确定属性和可选属性的值类型都必须是它的类型的子集
+    // [propName: string]: string; //error  一旦定义了任意属性，那么确定属性和可选属性的值类型都必须是它的类型的子集
     // 索引签名的key只支持字符串、数字、symbol类型
 }
 let jack = {
@@ -82,8 +83,4 @@ let point1 = { x: 1, y: 1 };
 //     return obj[key];
 //   }
 
-// 4.任意属性，也就是索引签名可以定义数组的类型
-interface ArrObj {
-    [index: number]: string;
-}
-let arr: ArrObj = ["1", "2"];
+

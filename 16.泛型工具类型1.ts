@@ -70,7 +70,7 @@ loggingIdentity<Lengthwise>({ length: 1 });
 // }
 
 // 5.infer
-// infer是推断的意思，其实就相当于是一个占位的符号，用infer R去给他占位
+// infer是推断的意思，其实就相当于是一个占位的符号，用infer R去给他占位，推断这里的是什么类型，则 R 就是什么类型
 type Params<T> = T extends (...args: infer R) => any ? R : any;
 
 type T0 = Params<() => string>; //因为没有传递参数，所以推导出的类型就是[]
@@ -78,7 +78,7 @@ let t0: T0 = [];
 // let t0: T0 = [1]; //error  不能有值
 
 type T1 = Params<(s: string) => string>; //得到类型为[string]
-let t1: T1 = ["1"];
+// let t1: T1 = ["1"];
 // let t1: T1 = ["1", "2"]; // error
 
 type T2 = Params<(...args: number[]) => string>; //得到类型为number[]
@@ -89,7 +89,7 @@ type T3 = { name: string };
 type T4 = { age: number };
 
 type GetUnionT<T> = T extends { a: (x: infer U) => void; b: (x: infer U) => void } ? U : never;
-type UnionT = GetUnionT<{ a: (x: T3) => void; b: (x: T4) => void }>; //得到的类型为 T1 & T2 的联合类型
+type UnionT = GetUnionT<{ a: (x: T3) => void; b: (x: T4) => void }>; //得到的类型为 T3 & T4 的联合类型
 
 // TypeScript系统内置的类型ReturnType，就是使用infer得到的
 type ReturnTypeCopy<T extends (...args: any[]) => any> = T extends (...args: any[]) => infer R ? R : any;

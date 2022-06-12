@@ -22,4 +22,6 @@ var jack = {
     sex: "boy",
 };
 var point1 = { x: 1, y: 1 };
-var arr = ["1", "2"];
+// function prop(obj: object, key: string) {
+//     return obj[key];
+//   }

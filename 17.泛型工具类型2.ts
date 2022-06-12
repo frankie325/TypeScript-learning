@@ -79,19 +79,18 @@ let todo: pTodo = {
 
 // 5.Record
 /*
-Record<K, T> 的作用是将 K 中所有类型作为键，T作为类型。
+Record<K, T> 的作用是将 K 中所有类型作为键，T作为值的类型。
 定义：
 type Record<K extends keyof any> = {
     [P in K]: T;
 }
-keyof any为 string | number | symbol，刚好就是对象的索引的类型
+keyof any为 string | number | symbol，刚好就是对象的索引的类型所支持的三种类型
 意思就是传入的K被约束为只能是这几种类型
 也就是K只能是这三种类型或者这三种类型的联合类型
 */
 interface PageInfo {
     title: string;
 }
-// type Page = string;  //如果K是string类型，[P in string]说明所有字符名称都可以作为键
 type Page = "home" | "about" | "contact";
 
 let page: Record<Page, PageInfo> = {

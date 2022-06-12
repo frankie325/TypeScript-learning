@@ -21,6 +21,5 @@ function loggingIdentity(arg) {
 }
 loggingIdentity({ length: 1 });
 var t0 = [];
-var t1 = ["1"];
 var t2 = [1, 2];
 var rt = "111";

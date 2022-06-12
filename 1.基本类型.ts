@@ -23,7 +23,7 @@ let u: undefined = undefined;
 let arr1: string[] = ["1", "2"];
 // 或者
 let arr2: Array<number> = [1, 2]; // Array<number>泛型语法
-
+// let strarr: [string] = ["1","2"]; // 如果是[string]，则数组长度只能为 1
 // 8.Any类型
 // any 类型为系统顶级类型，任何类型都可以进行赋值
 let unsure: any = 666;
@@ -43,6 +43,7 @@ let unArr: unknown = [1, 2, 3];
 // unArr.slice(1)  //error
 
 // 但是unknown类型只能赋值给any类型和unknown类型
+
 let val1: any = unk;
 let val2: unknown = unk;
 // let val3: string = unk;  //error
@@ -54,7 +55,9 @@ let tup: [string, boolean] = ["str", true];
 // 11.Void 类型
 // void表示没有任何类型，和其他类型是平等关系，不能直接赋值
 let vo: void;
-// a = "str"  //error
+// undefined除外
+vo = undefined;
+// vo = 1; //error
 //一般在当函数没有返回值时，定义成void类型
 function fun(): void {}
 
@@ -64,6 +67,7 @@ function fun(): void {}
 function err(msg: string): never {
     throw new Error(msg);
 }
+let a = err("err");
 // (2).函数中执行死循环代码
 function loopfun(): never {
     while (true) {}
@@ -111,7 +115,7 @@ let eptObj1: {} = {
 // let eptObj2: object = null; //error
 // let eptObj3: object = undefined; //error
 let eptObj4: {} = 1;
-// 但是仍然可以访问在 Object 类型上定义的所有属性和方法，这些属性和方法可通过 JavaScript 的原型链隐式地使用
+// 但 JavaScript 的原型链隐式地使用
 eptObj4.toString;
 eptObj4.toString();
 

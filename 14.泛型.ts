@@ -28,7 +28,7 @@ interface configFun1 {
     <T>(value: T): T;
 }
 
-let getData1: configFun1 = function <T>(value: T): T {
+let getData1: configFun1 = function (value) {
     return value;
 };
 // 调用的时候指定泛型类型
@@ -70,5 +70,3 @@ type GetType<T> = T extends any ? T : any;
 
 let getT1: GetType<string> = "1";
 // let getT2: GetType<string> = 1; //error
-
-

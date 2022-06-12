@@ -12,6 +12,7 @@ var Direction;
 // 从编译结果可以看出，数字枚举除了支持从名称到值映射外，还支持值到名称的反向映射
 var dirName = Direction.Up;
 var dirValue = Direction[1];
+// Directions[4]
 // 区别就在于经过编译不会产生额外的javascript代码
 var directions = [2 /* Up */, 4 /* Down */, 4 /* Left */, 5 /* Right */];
 // 3.字符串枚举，不支持双向映射了

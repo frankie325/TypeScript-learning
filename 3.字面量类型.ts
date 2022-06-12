@@ -25,3 +25,9 @@ helloNum = 2;
 let helloBool: true | false; //与直接使用:boolean没有区别
 helloBool = true;
 helloBool = false;
+
+// 4. 对象字面量
+
+const point: { x: number; y: number } = { x: 0, y: 0 };
+
+export default void 0

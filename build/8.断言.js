@@ -10,7 +10,7 @@
 //     if (something.length) {  //error
 //         return something.length;
 //     } else {
-//         return something.toString().length;  //error
+//         return something.toString().length;  
 //     }
 // }
 // 此时可以使用类型断言

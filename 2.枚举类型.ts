@@ -20,6 +20,8 @@ const enum Directions {
     Left = 4,
     Right,
 }
+
+// Directions[4]
 // 区别就在于经过编译不会产生额外的javascript代码
 let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
 

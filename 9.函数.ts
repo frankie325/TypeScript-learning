@@ -6,7 +6,7 @@ function getSum(a: number, b: number): number {
     // 像这种情况也可以不需要添加返回类型
     // 因为会有编译器自动推断
     return a + b;
-    // return "1"; //error 注意：如果返回的是字面量，那返回的为字面量类型
+    // return "1"; //error 注意：如果函数返回的是字面量，那返回类型则为字面量类型
 }
 
 // 3.可选参数

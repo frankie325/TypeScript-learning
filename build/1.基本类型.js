@@ -18,6 +18,7 @@ var u = undefined;
 var arr1 = ["1", "2"];
 // 或者
 var arr2 = [1, 2]; // Array<number>泛型语法
+// let strarr: [string] = ["1","2"]; // 如果是[string]，则数组长度只能为 1
 // 8.Any类型
 // any 类型为系统顶级类型，任何类型都可以进行赋值
 var unsure = 666;
@@ -44,7 +45,9 @@ var tup = ["str", true];
 // 11.Void 类型
 // void表示没有任何类型，和其他类型是平等关系，不能直接赋值
 var vo;
-// a = "str"  //error
+// undefined除外
+vo = undefined;
+// vo = 1; //error
 //一般在当函数没有返回值时，定义成void类型
 function fun() { }
 // 12.Never类型
@@ -53,6 +56,7 @@ function fun() { }
 function err(msg) {
     throw new Error(msg);
 }
+var a = err("err");
 // (2).函数中执行死循环代码
 function loopfun() {
     while (true) { }
@@ -95,7 +99,7 @@ var eptObj1 = {
 // let eptObj2: object = null; //error
 // let eptObj3: object = undefined; //error
 var eptObj4 = 1;
-// 但是仍然可以访问在 Object 类型上定义的所有属性和方法，这些属性和方法可通过 JavaScript 的原型链隐式地使用
+// 但 JavaScript 的原型链隐式地使用
 eptObj4.toString;
 eptObj4.toString();
 /*

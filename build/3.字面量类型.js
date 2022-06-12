@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 1.字符串字面量类型
 // 可以使用一个字符串字面量作为变量的类型
 var hello = "hello";
@@ -18,3 +19,6 @@ helloNum = 2;
 var helloBool; //与直接使用:boolean没有区别
 helloBool = true;
 helloBool = false;
+// 4. 对象字面量
+var point = { x: 0, y: 0 };
+exports.default = void 0;
